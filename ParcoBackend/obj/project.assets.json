@@ -469,19 +469,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anabe\\.nuget\\packages\\": {}
+    "C:\\Users\\moa5ct\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\ParcoBackend.csproj",
+      "projectUniqueName": "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend\\ParcoBackend.csproj",
       "projectName": "ParcoBackend",
-      "projectPath": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\ParcoBackend.csproj",
-      "packagesPath": "C:\\Users\\anabe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\obj\\",
+      "projectPath": "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend\\ParcoBackend.csproj",
+      "packagesPath": "C:\\Users\\moa5ct\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\anabe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\moa5ct\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -499,6 +499,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -525,6 +530,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -533,7 +556,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415\\RuntimeIdentifierGraph.json"
       }
     }
   }
