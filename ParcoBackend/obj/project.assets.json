@@ -1,7 +1,11 @@
 {
   "version": 3,
   "targets": {
+<<<<<<< HEAD
     "net8.0": {
+=======
+    "net7.0": {
+>>>>>>> 9045401c679efff900ca0fd2979ea55cc56db0d7
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -1518,6 +1522,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1526,7 +1548,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415\\RuntimeIdentifierGraph.json"
+>>>>>>> 9045401c679efff900ca0fd2979ea55cc56db0d7
       }
     }
   },
@@ -1538,7 +1564,11 @@
       "message": "ParcoBackend depende de Npgsql.EntityFrameworkCore.PostgreSQL (>= 7.0.14), mas Npgsql.EntityFrameworkCore.PostgreSQL 7.0.14 não foi encontrado. A melhor correspondência aproximada de Npgsql.EntityFrameworkCore.PostgreSQL 7.0.18 foi resolvida.",
       "libraryId": "Npgsql.EntityFrameworkCore.PostgreSQL",
       "targetGraphs": [
+<<<<<<< HEAD
         "net8.0"
+=======
+        "net7.0"
+>>>>>>> 9045401c679efff900ca0fd2979ea55cc56db0d7
       ]
     }
   ]
