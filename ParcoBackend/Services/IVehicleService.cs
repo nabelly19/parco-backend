@@ -7,7 +7,7 @@ using DTO;
 
 namespace ParcoBackend.Services;
 
-public interface IVehicleservice 
+public interface IVehicleService 
 {
     Task<IEnumerable<VehicleReadDto>> GetAllAsync();
     Task<VehicleReadDto?> GetByIdAsync(Guid id);

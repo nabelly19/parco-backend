@@ -12,28 +12,36 @@ namespace ParcoBackend.Services;
 
 public class VehicleService : IVehicleService
 {
-    ParcoDbContext _context;
+    ParcoContext _context;
 
-    public VehicleService(ParcoDbContext context)
+    public VehicleService(ParcoContext context)
     {
         _context = context;
     }
 
-    public async Task<VehicleReadDto> CreateAsync(VehicleReadDto dto)
-    {
-        var exists = await _context.Vehicles.
-        AnyAsync(v => v.VehiclePlate.ToLower() == dto.VehiclePlate.ToLower());
 
-        if (exists)
-            throw new InvalidOperationException("Já existe um veículo com esta placa cadastrado.");
+    //Create
+    public async Task<VehicleReadDto> CreateAsync(VehicleCreateDto dto)
+    {
+        var userExists = await _context.Users.AnyAsync(u => u.Id == dto.UserId);
+        if (!userExists)
+            throw new ArgumentException("Usuário associado não encontrado.");
+
+        var normalizedPlate = dto.VehiclePlate.Trim().ToUpper();
+
+        var plateExists = await _context.Vehicles
+            .AnyAsync(v => v.Vehicleplate.ToLower() == normalizedPlate.ToLower());
+
+        if (plateExists)
+          throw new ArgumentException("Já existe um veículo com esta placa cadastrado.");
 
         var vehicle = new Vehicle
         {
             Id = Guid.NewGuid(),
-            Userid = dto.Userid,
-            VehicleModel = dto.VehicleModel,
-            VehiclePlate = dto.VehiclePlate,
-            Created = DateTime.Now,
+            Userid = dto.UserId,
+            Vehiclemodel = dto.VehicleModel.Trim(),
+            Vehicleplate = normalizedPlate,
+            Created = DateTime.UtcNow
         };
 
         _context.Vehicles.Add(vehicle);
@@ -42,9 +50,9 @@ public class VehicleService : IVehicleService
         return new VehicleReadDto
         {
             Id = vehicle.Id,
-            UserId = vehicle.UserId,
-            VehicleModel = vehicle.VehicleModel,
-            VehiclePlate = vehicle.VehiclePlate,
+            UserId = vehicle.Userid,
+            VehicleModel = vehicle.Vehiclemodel,
+            VehiclePlate = vehicle.Vehicleplate,
             Created = vehicle.Created ?? DateTime.UtcNow,
         };
     }
@@ -54,28 +62,28 @@ public class VehicleService : IVehicleService
     {
         var vehicles = await _context.Vehicles
             .AsNoTracking()
-            .OrderBy(v => v.VehiclePlate)
+            .OrderBy(v => v.Vehicleplate)
             .ToListAsync();
 
         return vehicles.Select(vehicles => new VehicleReadDto
         {
-            IdentifierCase = vehicles.Id,
-            UserId = vehicles.UserId,
-            VehicleModel = vehicles.VehicleModel,
-            VehiclePlate = vehicles.VehiclePlate,
+            Id = vehicles.Id,
+            UserId = vehicles.Userid,
+            VehicleModel = vehicles.Vehiclemodel,
+            VehiclePlate = vehicles.Vehicleplate,
             Created = vehicles.Created ?? DateTime.UtcNow,
-            Update = vehicles.Update,
+            Updated = vehicles.Updated,
         });
     }
 
     //GetById
-    public async Task<VehicleReadDto?> GetByIdAsync(int id)
+    public async Task<VehicleReadDto?> GetByIdAsync(Guid id)
     {
-        var vehicle = await _context.Vehicle
+        var vehicle = await _context.Vehicles
             .AsNoTracking()
             .FirstOrDefaultAsync(v => v.Id == id);
 
-        if (vehicle == null) return "Veículo não encontrado";
+        if (vehicle == null) return null;
 
         return new VehicleReadDto
         {
@@ -88,15 +96,16 @@ public class VehicleService : IVehicleService
         };
     }
 
+    //Update
     public async Task<VehicleReadDto?> UpdateAsync(Guid id, VehicleCreateDto dto)
     {
-        var vehicle = await _context.Vehicle.FindAsync(id);
+        var vehicle = await _context.Vehicles.FindAsync(id);
 
-        if (vehicle == null) return "Veículo não encontrado";
+        if (vehicle == null) return null;
 
-        vehicle.VehicleModel = dto.VehicleModel;
-        vehicle.VehiclePlate = dto.VehiclePlate;
-        vehicle.UserId = dto.UserId;
+        vehicle.Vehiclemodel = dto.VehicleModel;
+        vehicle.Vehicleplate = dto.VehiclePlate;
+        vehicle.Userid = dto.UserId;
         vehicle.Updated = DateTime.UtcNow;
 
         await _context.SaveChangesAsync();
@@ -112,6 +121,7 @@ public class VehicleService : IVehicleService
         };
     }
 
+    //Delete
     public async Task<bool> DeleteAsync(Guid id)
     {
         var vehicle = await _context.Vehicles.FindAsync(id);

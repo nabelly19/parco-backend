@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "yrB/gZau0co=",
-=======
-  "dgSpecHash": "u0rFoHqIBYE=",
->>>>>>> 9045401c679efff900ca0fd2979ea55cc56db0d7
   "success": true,
   "projectFilePath": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\ParcoBackend.csproj",
   "expectedPackageFiles": [
@@ -36,17 +32,15 @@
     "C:\\Users\\anabe\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\anabe\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\anabe\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-<<<<<<< HEAD
     "C:\\Users\\anabe\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
-=======
-    "C:\\Users\\anabe\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
-    "C:\\Users\\anabe\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
-    "C:\\Users\\anabe\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
-    "C:\\Users\\anabe\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
-    "C:\\Users\\anabe\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.20\\microsoft.netcore.app.host.win-x64.7.0.20.nupkg.sha512"
->>>>>>> 9045401c679efff900ca0fd2979ea55cc56db0d7
   ],
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1603",
       "level": "Warning",
@@ -54,11 +48,7 @@
       "message": "ParcoBackend depende de Npgsql.EntityFrameworkCore.PostgreSQL (>= 7.0.14), mas Npgsql.EntityFrameworkCore.PostgreSQL 7.0.14 não foi encontrado. A melhor correspondência aproximada de Npgsql.EntityFrameworkCore.PostgreSQL 7.0.18 foi resolvida.",
       "libraryId": "Npgsql.EntityFrameworkCore.PostgreSQL",
       "targetGraphs": [
-<<<<<<< HEAD
         "net8.0"
-=======
-        "net7.0"
->>>>>>> 9045401c679efff900ca0fd2979ea55cc56db0d7
       ]
     }
   ]
