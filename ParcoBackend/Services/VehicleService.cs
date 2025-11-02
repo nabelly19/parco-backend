@@ -103,9 +103,11 @@ public class VehicleService : IVehicleService
 
         if (vehicle == null) return null;
 
+        if (vehicle.Userid != dto.UserId)
+            throw new InvalidCastException("Não é permitido alterar o usuário proprietário do veículo");
+
         vehicle.Vehiclemodel = dto.VehicleModel;
         vehicle.Vehicleplate = dto.VehiclePlate;
-        vehicle.Userid = dto.UserId;
         vehicle.Updated = DateTime.UtcNow;
 
         await _context.SaveChangesAsync();
