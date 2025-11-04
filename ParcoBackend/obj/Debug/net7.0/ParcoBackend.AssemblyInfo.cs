@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParcoBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c099198d13cb94ecb261261bea9b19923db2b90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3701e93be5f02805dadb833f31c1c9dbabfff39a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParcoBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParcoBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
