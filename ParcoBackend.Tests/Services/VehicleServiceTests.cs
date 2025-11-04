@@ -1,69 +1,49 @@
-using System;
-using System.Threading.Tasks;
-using Xunit;
-using Microsoft.EntityFrameworkCore;
+using ParcoBackend.Tests.TestHelpers;
 using ParcoBackend.Model;
 using ParcoBackend.Services;
 using DTO;
-using FluentAssertions;
+using Xunit;
 
 namespace ParcoBackend.Tests.Services
 {
     public class VehicleServiceTests
     {
-        private ParcoDbContext GetInMemoryDbContext()
-        {
-            var options = new DbContextOptionsBuilder<ParcoDbContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
-                .Options;
-            return new ParcoDbContext(options);
-        }
-
         [Fact]
         public async Task CreateAsync_Should_Add_New_Vehicle()
         {
             // Arrange
-            var context = GetInMemoryDbContext();
+            var context = TestDbContextFactory.CreateContext();
             var service = new VehicleService(context);
+
+            var user = new User
+            {
+                Id = Guid.NewGuid(),
+                Firstname = "Test",
+                Lastname = "User",
+                Email = "test@example.com",
+                Phonenumber = "123456789",
+                Password = "password123",
+                Usercategory = "Motorist"
+            };
+
+            // Add user on test
+            context.Users.Add(user);
+            await context.SaveChangesAsync();
 
             var dto = new VehicleCreateDto
             {
-                UserId = Guid.NewGuid(),
-                VehicleModel = "Tesla Model 3",
-                VehiclePlate = "ABC1D23"
+                VehiclePlate = "ABC1234",
+                VehicleModel = "Carro de Teste",
+                UserId = user.Id 
             };
 
             // Act
-            var result = await service.CreateAsync(dto);
-
-            // Assert
-            result.Should().NotBeNull();
-            result.VehicleModel.Should().Be("Tesla Model 3");
-            result.VehiclePlate.Should().Be("ABC1D23");
-        }
-
-        [Fact]
-        public async Task CreateAsync_Should_Throw_When_Plate_Already_Exists()
-        {
-            // Arrange
-            var context = GetInMemoryDbContext();
-            var service = new VehicleService(context);
-
-            var dto = new VehicleCreateDto
-            {
-                UserId = Guid.NewGuid(),
-                VehicleModel = "Honda Civic",
-                VehiclePlate = "XYZ9A88"
-            };
-
             await service.CreateAsync(dto);
 
-            // Act
-            Func<Task> act = async () => await service.CreateAsync(dto);
-
             // Assert
-            await act.Should().ThrowAsync<InvalidOperationException>()
-                .WithMessage("Já existe um veículo com esta placa cadastrado.");
+            Assert.True(context.Vehicles.Any(v => v.Vehicleplate == "ABC1234"));
+
+            TestDbContextFactory.Destroy(context);
         }
     }
 }

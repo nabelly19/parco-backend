@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend.Tests\\ParcoBackend.Tests.csproj": {}
+    "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend.Tests\\ParcoBackend.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend.Tests\\ParcoBackend.Tests.csproj": {
+    "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend.Tests\\ParcoBackend.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend.Tests\\ParcoBackend.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend.Tests\\ParcoBackend.Tests.csproj",
         "projectName": "ParcoBackend.Tests",
-        "projectPath": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend.Tests\\ParcoBackend.Tests.csproj",
-        "packagesPath": "C:\\Users\\anabe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend.Tests\\obj\\",
+        "projectPath": "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend.Tests\\ParcoBackend.Tests.csproj",
+        "packagesPath": "C:\\Users\\moa5ct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anabe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\moa5ct\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\ParcoBackend.csproj": {
-                "projectPath": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\ParcoBackend.csproj"
+              "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend\\ParcoBackend.csproj": {
+                "projectPath": "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend\\ParcoBackend.csproj"
               }
             }
           }
@@ -96,17 +96,17 @@
         }
       }
     },
-    "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\ParcoBackend.csproj": {
+    "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend\\ParcoBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\ParcoBackend.csproj",
+        "projectUniqueName": "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend\\ParcoBackend.csproj",
         "projectName": "ParcoBackend",
-        "projectPath": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\ParcoBackend.csproj",
-        "packagesPath": "C:\\Users\\anabe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anabe\\OneDrive\\Área de Trabalho\\parco-backend\\ParcoBackend\\obj\\",
+        "projectPath": "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend\\ParcoBackend.csproj",
+        "packagesPath": "C:\\Users\\moa5ct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\moa5ct\\Desktop\\parco-backend\\ParcoBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anabe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\moa5ct\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -139,15 +139,25 @@
               "target": "Package",
               "version": "[7.0.15, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.14, )"
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[7.0.14, )"
+              "version": "[9.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
