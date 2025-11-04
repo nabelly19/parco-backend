@@ -1,0 +1,6 @@
+C:\Users\anabe\OneDrive\Área de Trabalho\parco-backend\ParcoBackend.Tests\obj\Debug\net8.0\ParcoBackend.Tests.csproj.AssemblyReference.cache
+C:\Users\anabe\OneDrive\Área de Trabalho\parco-backend\ParcoBackend.Tests\obj\Debug\net8.0\ParcoBackend.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anabe\OneDrive\Área de Trabalho\parco-backend\ParcoBackend.Tests\obj\Debug\net8.0\ParcoBackend.Tests.AssemblyInfoInputs.cache
+C:\Users\anabe\OneDrive\Área de Trabalho\parco-backend\ParcoBackend.Tests\obj\Debug\net8.0\ParcoBackend.Tests.AssemblyInfo.cs
+C:\Users\anabe\OneDrive\Área de Trabalho\parco-backend\ParcoBackend.Tests\obj\Debug\net8.0\ParcoBackend.Tests.csproj.CoreCompileInputs.cache
+C:\Users\anabe\OneDrive\Área de Trabalho\parco-backend\ParcoBackend.Tests\obj\Debug\net8.0\ParcoBackend.Tests.sourcelink.json
