@@ -10,6 +10,6 @@ namespace ParcoBackend.Services;
 public interface IReportService 
 {
     Task<List<RevenueReportDto>> GetRevenueByParkingAsync(DateTime start, DateTime end);
-    Task<List<OccupancyReportDto>> GetAverageOccupancyRateAsync(DateTime start, DateTime end);
-    Task<List<BookingSummaryDto>> GetBookingSummaryAsync(DateOnly start, DateOnly end);
+    // Task<List<OccupancyReportDto>> GetAverageOccupancyRateAsync(DateTime start, DateTime end);
+    // Task<List<BookingSummaryDto>> GetBookingSummaryAsync(DateOnly start, DateOnly end);
 }
