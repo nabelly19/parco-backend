@@ -35,8 +35,11 @@ public class PricingRuleController : ControllerBase
         [HttpPost]
         public async Task<IActionResult> CreateRule([FromBody] PricingRuleDto dto)
         {
-            var rule = await _service.CreateRuleAsync(dto);
-            return CreatedAtAction(nameof(GetRule), new { name = rule.PlaneName }, rule);
+            var created = await _service.CreateRuleAsync(dto);
+            if (created == null)
+                return Conflict($"Já existe uma regra com o nome '{dto.PlaneName}'.");
+
+            return CreatedAtAction(nameof(GetRule), new { name = dto.PlaneName }, created);
         }
 
         [HttpPut("{name}")]

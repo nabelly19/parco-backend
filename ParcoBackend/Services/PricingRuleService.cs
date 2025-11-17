@@ -16,16 +16,21 @@ public class PricingRuleService : IPricingRuleService
         public Task<PricingRuleDto?> GetRuleByNameAsync(string name)
         => Task.FromResult(_rules.FirstOrDefault(r => r.PlaneName.Equals(name, StringComparison.OrdinalIgnoreCase)));
 
-        public Task<PricingRuleDto> CreateRuleAsync(PricingRuleDto dto)
+        public async Task<PricingRuleDto> CreateRuleAsync(PricingRuleDto dto)
         {
+            var exists = await GetRuleByNameAsync(dto.PlaneName);
+            if (exists != null)
+                return null;
+
             _rules.Add(dto);
-            return Task.FromResult(dto);
+            return dto;
         }
 
-        public Task<PricingRuleDto?> UpdateRuleAsync(string name, PricingRuleDto dto)
+        public async Task<PricingRuleDto?> UpdateRuleAsync(string name, PricingRuleDto dto)
         {
-            var existing = _rules.FirstOrDefault(r => r.PlaneName.Equals(name, StringComparison.OrdinalIgnoreCase));
-            if (existing == null) return Task.FromResult<PricingRuleDto?>(null);
+            var existing = await GetRuleByNameAsync(name);
+            if (existing == null)
+                return null;
 
             existing.Description = dto.Description;
             existing.Multiplier = dto.Multiplier;
@@ -34,7 +39,7 @@ public class PricingRuleService : IPricingRuleService
             existing.WeekendOnly = dto.WeekendOnly;
             existing.Active = dto.Active;
 
-            return Task.FromResult(existing);
+            return existing;
         }
 
         public Task<bool> DeleteRuleAsync(string name)
