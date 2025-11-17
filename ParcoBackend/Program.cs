@@ -9,6 +9,7 @@ builder.Services.AddDbContext<ParcoContext>(options =>
 
 builder.Services.AddScoped<IVehicleService, VehicleService>();
 builder.Services.AddScoped<IReportService, ReportService>();
+builder.Services.AddScoped<IPricingRuleService, PricingRuleService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -24,5 +25,7 @@ app.UseSwaggerUI();
 
 app.UseAuthorization();
 app.MapControllers();
+
+app.UseHttpsRedirection();
 
 app.Run();
